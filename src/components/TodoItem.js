@@ -1,9 +1,15 @@
-import React from "react"
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class TodoItem extends React.Component {
+class TodoItem extends React.PureComponent {
   render() {
-    return <li>{this.props.todo.title}</li>
+    const { todo } = this.props;
+    return <li>{todo.title}</li>;
   }
 }
 
-export default TodoItem
+TodoItem.propTypes = {
+  todo: PropTypes.objectOf.isRequired,
+};
+
+export default TodoItem;
